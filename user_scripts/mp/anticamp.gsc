@@ -44,7 +44,7 @@ anticamp_onPlayerSpawned()
 
     if (anticamp_isPlayerWhitelisted(self.guid))
     {
-        self iprintlnbold("^2You are exempt from camping rules.");
+        self iprintlnbold("^2Sie sind von den Campingregeln ausgenommen.");
         return;
     }
 
@@ -85,7 +85,8 @@ anticamp_monitorCamping()
             if (!self.countdownStarted)
             {
                 self.countdownStarted = true;
-                self iprintlnbold("Move or Consequences!");
+				say("^1" + self.name + "^1 ist in Camping Fieber!");
+                self iprintlnbold("Nicht campen! Bewegen oder Konsequenzen!");
                 wait(3); // Give a short warning period
                 if (distance(self.lastPosition, self.origin) > self.campDistance)
                 {
@@ -99,6 +100,7 @@ anticamp_monitorCamping()
             if (self.countdownStarted)
             {
                 self suicide();
+				say("^1" + self.name + "^1 ist an Camping Fieber gestorben!");
                 self.countdownStarted = false;
                 self.lastMoveTime = getTime();
                 self.lastPosition = self.origin;

@@ -17,13 +17,7 @@ hudLoop()
 	while (true)
 	{
 		info.glowcolor = ( .7, .3, 1 );
-		info setText("Draakkoor's Servernetwork");
+		info setText("Skillbasecamping COD Server");
 		wait 20;
-		info.glowcolor = ( 0, 1, 0 );
-		info setText("discord.gg/Jx6xXPb6KF");
-		wait 14;
-		info.glowcolor = ( 1, 0, 0 );
-		info setText("Join our community!");
-		wait 8;
 	}
 }
